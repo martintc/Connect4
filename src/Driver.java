@@ -3,6 +3,10 @@ import ui.GUI;
 
 import javafx.application.Application;
 
+/**
+ * Test codes
+ */
+
 public class Driver {
 
 	public static void main (String[] args) {

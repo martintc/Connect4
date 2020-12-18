@@ -31,8 +31,8 @@ public class GUI extends Application {
 	// where the GUI application thread starts
 	// start the setup
 	public void start (Stage primaryStage) {
-		width = 600;
-		height = 600;
+		width = 200;
+		height = 200;
 		gui = new GameBoardGUI();
 		gameBoard = gui.getGameBoardUI();
 		turnMessage = new Text();
