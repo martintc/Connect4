@@ -20,6 +20,8 @@ public class GUI extends Application {
 	private GridPane gameBoard;
 	private VBox centerPane;
 	private MoveButtons moveButtons;
+	private Text turnMessage;
+	private boolean turn;
 
 	private int width;
 	private int height;
@@ -29,11 +31,12 @@ public class GUI extends Application {
 	// where the GUI application thread starts
 	// start the setup
 	public void start (Stage primaryStage) {
+		width = 600;
+		height = 600;
 		gui = new GameBoardGUI();
 		gameBoard = gui.getGameBoardUI();
+		turnMessage = new Text();
 		renderScreen(primaryStage);
-		width = 600;
-		height = 800;
 	}
 
 	// will render the  screen when called
@@ -56,15 +59,26 @@ public class GUI extends Application {
 
 		centerPane.getChildren().add(moveButtons.getMoveButtonPane());
 		centerPane.getChildren().add(gameBoard);
-
+		centerPane.setAlignment(Pos.CENTER);
 		BorderPane.setAlignment(centerPane, Pos.CENTER);
 		root.setCenter(centerPane);
+
+		turnMessage.setText("Awaiting turn information");
+		BorderPane.setAlignment(turnMessage, Pos.CENTER);
+		root.setBottom(turnMessage);
 
 		primaryStage.setScene(new Scene(root,  width, height));
 		primaryStage.show();
 	}
 
-	// 
+	//
+	void setTurnMessageDisplay () {
+		if (turn) {
+			turnMessage.setText("It is your turn");
+		} else {
+			turnMessage.setText("Opponent's turn");
+		}
+	}
 
 
 }

@@ -1,21 +1,22 @@
 package ui.UIResources;
 
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
 
 public class GameBoardGUI {
 
     private GridPane gameboard;
-    int columns = 7;
-    int rows = 6;
-    double radius;
+    private int columns = 7;
+    private int rows = 6;
+    private double radius;
+    private Color empty = Color.LIGHTGREY;
 
     public GameBoardGUI () {
         gameboard = new GridPane();
         radius = 10;
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < columns; c++) {
-                gameboard.add(new Circle(radius), c, r);
+                gameboard.add(new Connect4Slot(radius, "GREY:"), c, r);
             }
         }
     }
@@ -25,7 +26,7 @@ public class GameBoardGUI {
         gameboard = new GridPane();
         for (int r = 0; r < rows; r++)
             for (int c = 0; c < columns; c++)
-                gameboard.add(new Circle(radius), c, r);
+                gameboard.add(new Connect4Slot(radius, "GREY"), c, r);
     }
 
     public GridPane getGameBoardUI () {
