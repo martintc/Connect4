@@ -1,5 +1,6 @@
 import ui.TextConsole;
 import ui.LocalGUI;
+import Server.*;
 
 import javafx.application.Application;
 
@@ -10,7 +11,7 @@ import javafx.application.Application;
 public class Driver {
 
 	public static void main (String[] args) {
-		int choice = 1;
+		int choice = 2;
 
 		if (choice == 0) {
 			TextConsole t = new TextConsole();
@@ -19,6 +20,11 @@ public class Driver {
 
 		if (choice == 1) {
 			Application.launch(LocalGUI.class, args);
+		}
+
+		if (choice == 2) {
+			Connect4Server server = new Connect4Server();
+			server.start();
 		}
 
 
