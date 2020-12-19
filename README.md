@@ -3,6 +3,12 @@ Connect 4 Game
 
 A connect4 game suite that offers local play, network play and a server.
 
+Dependencies
+---------
+- JDK/JRE (compiled and tested against 15)
+- JavaFX (compiled and tested against 15)
+
+
 Currently supported:
 ----------
 - text play
