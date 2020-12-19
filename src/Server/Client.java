@@ -67,6 +67,7 @@ public class Client {
             return -1;
         }catch (IOException e) {
             System.err.print("Error receiving data");
+            System.exit(1);
             return -1;
         }
     }
