@@ -20,7 +20,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 
-public class GUI extends Application {
+public class LocalGUI extends Application {
 
 	private int width;
 	private int height;

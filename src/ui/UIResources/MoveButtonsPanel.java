@@ -1,10 +1,6 @@
 package ui.UIResources;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import ui.GUI;
 
 public class MoveButtonsPanel extends HBox {
 

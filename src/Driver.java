@@ -1,5 +1,5 @@
 import ui.TextConsole;
-import ui.GUI;
+import ui.LocalGUI;
 
 import javafx.application.Application;
 
@@ -18,7 +18,7 @@ public class Driver {
 		}
 
 		if (choice == 1) {
-			Application.launch(GUI.class, args);
+			Application.launch(LocalGUI.class, args);
 		}
 
 
