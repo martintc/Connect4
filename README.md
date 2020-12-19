@@ -1,6 +1,9 @@
 Connect 4 Game
 ---------
+
+
 Currently supported:
+----------
 - text play
     - single player against comput
     - local multiplayer
