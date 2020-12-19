@@ -12,7 +12,7 @@ Dependencies
 Currently supported:
 ----------
 - text play
-    - single player against comput
+    - single player against computer
     - local multiplayer
 - GUI play
     - local multiplayer
