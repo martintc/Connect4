@@ -8,5 +8,6 @@ Currently supported:
     - local multiplayer
     
 TODO:
+---------
 - Server code
 - GUI network player
