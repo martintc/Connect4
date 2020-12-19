@@ -6,13 +6,11 @@ import com.sun.webkit.dom.HTMLBaseFontElementImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
 import ui.UIResources.*;
 import ui.PlayStyle.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
@@ -154,9 +152,12 @@ public class LocalGUI extends Application {
 
 		root.setCenter(centerPane);
 
+		HBox bottomPane = new HBox();
 		turnNotice = new Text();
+		bottomPane.setAlignment(Pos.CENTER);
+		bottomPane.getChildren().add(turnNotice);
 		updatePlayer(play.getCurrentPlayerSymbol());
-		root.setBottom(turnNotice);
+		root.setBottom(bottomPane);
 
 
 
