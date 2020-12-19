@@ -47,7 +47,7 @@ public class Connect4 {
 		boolean move = gameBoard.updateGameBoard(columnSelected, currentPlayer.getPlayerSymbol());
 		if (move == false) return false;
 		this.gameWinState = this.checkWinState(currentPlayer.getPlayerSymbol(), columnSelected);
-		return this.gameWinState;
+		return true;
 	}
 	/**
 	*
