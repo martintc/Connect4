@@ -1,6 +1,7 @@
 Connect 4 Game
 ---------
 
+A connect4 game suite that offers local play, network play and a server.
 
 Currently supported:
 ----------
