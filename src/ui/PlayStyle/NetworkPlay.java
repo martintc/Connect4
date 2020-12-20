@@ -8,7 +8,8 @@ public class NetworkPlay extends PlayStyle {
     private NetworkHandler network;
     private boolean turn;
     private boolean winState;
-    private MessageParser parser;
+    private String boardState;
+    private MessageParser parser = new MessageParser();
 
     public NetworkPlay () {
         network = new NetworkHandler();
@@ -29,6 +30,8 @@ public class NetworkPlay extends PlayStyle {
         parser.parseMessage(message);
         turn = parser.getPlayerTurn();
         winState = parser.getWinState();
+        boardState = parser.getBoardString();
+
     }
 
     public boolean getTurn () {
@@ -37,6 +40,10 @@ public class NetworkPlay extends PlayStyle {
 
     public boolean getWinState () {
         return winState;
+    }
+
+    public String getBoardState () {
+        return boardState;
     }
 
 }
