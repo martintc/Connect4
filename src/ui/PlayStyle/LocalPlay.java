@@ -2,7 +2,7 @@ package ui.PlayStyle;
 
 import core.*;
 
-public class LocalPlay implements PlayStyle {
+public class LocalPlay extends PlayStyle {
 
     private final Connect4 game;
     private char currentPlayer;
