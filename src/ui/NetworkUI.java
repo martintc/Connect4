@@ -40,7 +40,7 @@ public class NetworkUI extends Application {
         slots = new Connect4Slot[rows][columns];
         buttons = new MoveButton[columns];
         play = new NetworkPlay();
-        play.receiveUpdate(); // initial update from server to notify player turns and initial gameboard
+        //play.receiveUpdate(); // initial update from server to notify player turns and initial gameboard
 
         Text title = new Text("Connect4 - Local Play");
         HBox titlePane = new HBox();
@@ -175,14 +175,30 @@ public class NetworkUI extends Application {
         updatePlayer(play.getTurn());
         root.setBottom(bottomPane);
 
+        Runnable initial = () -> {
+            play.receiveUpdate();
+            updateGameBoard(play.getBoardState());
+            updatePlayer(play.getTurn());
+            if (!play.getTurn()) {
+                play.receiveUpdate();
+                updateGameBoard(play.getBoardState());
+                updatePlayer(play.getTurn());
+            }
+        };
+        Thread t = new Thread(initial);
+        t.start();
+
+
 
         mainStage.setScene(new Scene(root, width, height));
         mainStage.show();
+        /*
         if (!play.getTurn()) {
             play.receiveUpdate();
             updatePlayer(play.getTurn());
             updateGameBoard(play.getBoardState());
         }
+         */
 
     }
 
