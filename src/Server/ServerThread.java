@@ -34,7 +34,7 @@ public class ServerThread extends Thread {
         while (!game.getWinState()) {
             char playerTurn = game.getPlayerTurn();
             int move = -1;
-            notifyTurns(playerTurn);
+            updatePlayers(playerTurn);
             while (!game.playerMakesMove(move)) {
                 move = getMove(playerTurn);
             }
@@ -43,13 +43,15 @@ public class ServerThread extends Thread {
 
     }
 
-    private void notifyTurns (char c) {
+    private void updatePlayers (char c) {
         if (clientOne.getPlayerSymbol() == c) {
-            clientOne.writeToClient("1");
-            clientTwo.writeToClient("0");
+            String test = ServerMessage.constructMessage(1, game.getWinState(), game.getGameBoardString());
+            // System.out.println("Test string: " + test + ": End of String at colon");
+            clientOne.writeToClient(test);
+            clientTwo.writeToClient(ServerMessage.constructMessage(0, game.getWinState(), game.getGameBoardString()));
         } else if (clientTwo.getPlayerSymbol() == c) {
-            clientOne.writeToClient("0");
-            clientTwo.writeToClient("1");
+            clientOne.writeToClient(ServerMessage.constructMessage(0, game.getWinState(), game.getGameBoardString()));
+            clientTwo.writeToClient(ServerMessage.constructMessage(1, game.getWinState(), game.getGameBoardString()));
         }
     }
 
