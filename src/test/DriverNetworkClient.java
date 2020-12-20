@@ -1,3 +1,5 @@
+package test;
+
 import ui.NetworkUI;
 
 import javafx.application.Application;

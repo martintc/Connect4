@@ -1,3 +1,5 @@
+package test;
+
 import ui.TextConsole;
 import ui.LocalGUI;
 import Server.*;
