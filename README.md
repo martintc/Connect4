@@ -20,4 +20,6 @@ Currently supported:
 TODO:
 ---------
 - Server code
+  - server works as it but needs to be tested with playing clients
 - GUI network player
+  - network code it written, need to write the UI and test play logic
